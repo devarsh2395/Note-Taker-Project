@@ -5,6 +5,10 @@
 
 This note-taking app allows small business owners to write and save notes. The landing page provides a link to the notes page where existing notes are displayed in the left-hand column. Users can add new notes by entering the note title and text in the empty fields on the right-hand column. After entering the new note, a Save icon appears on the top navigation bar. Clicking on the Save icon saves the note, and it appears in the left-hand column with the other existing notes.
 
+[Link to Github Repository]()
+
+[Link to Deployed Webpage]()
+
 
 ## User Story
 
@@ -66,6 +70,7 @@ npm test
 ## Technologies Used
 
 - Node
+- ExpressJS
 - JAVASCRIPT
 
 ## Credits
