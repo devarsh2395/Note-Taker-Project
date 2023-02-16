@@ -21,6 +21,31 @@ app.get("/api/notes", (req, res) => {
     });
 });
 
+app.post('/api/notes', (req, res) => {
+    const {title, text} = req.body;
+    if (!title || !text ) {
+        throw new Error("title and text cannot be blank");
+    }
+ const newNote = {title, text, id: uuidv4()};
+ fs.readFile(path.join(__dirname, "/db/db.json"), (err,data) => {
+    if(err) {
+        console.log(err);
+    }
+    else {
+        const dbNotes = JSON.parse(data);
+        dbNotes.push(newNote);
+        fs.writeFile("./db/db.json", JSON.stringify(dbNotes),(err) => 
+        err ? console.error(err) : console.log("Successfully added note."))
+    }
+
+ })
+ const response = {
+    body: newNote
+ }
+ console.log(response)
+ res.json(response)
+})
+
 
 
 // HTML routes for notes.html and index.html
